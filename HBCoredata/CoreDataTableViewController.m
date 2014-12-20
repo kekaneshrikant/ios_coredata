@@ -10,9 +10,11 @@
 #import <Coredata/Coredata.h>
 #import "AppDelegate.h"
 #import "HBEntity.h"
+#import "AddPersonViewController.h"
 
 @interface CoreDataTableViewController () <NSFetchedResultsControllerDelegate>
 
+@property (nonatomic,strong) UIBarButtonItem *plusBarButtonItem;
 @property (nonatomic,strong) NSFetchedResultsController *controller;
 
 @end
@@ -43,6 +45,11 @@
     if (type == NSFetchedResultsChangeDelete) {
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
+    
+    else if(type == NSFetchedResultsChangeInsert){
+        [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+    
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
@@ -52,6 +59,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.plusBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewPerson:)];
+    
+    [self.navigationItem setRightBarButtonItem:self.plusBarButtonItem animated:NO];
+    
     
     NSFetchRequest *fetchRequest=[[NSFetchRequest alloc] initWithEntityName:@"HBEntity"];
     
@@ -79,6 +91,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void)addNewPerson:(id)sender {
+    [self performSegueWithIdentifier:@"add" sender:nil];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -98,6 +114,7 @@
     id<NSFetchedResultsSectionInfo> sectionInfo = self.controller.sections[section];
     return sectionInfo.numberOfObjects;
 }
+
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -161,14 +178,15 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
+#pragma mark - Navigation
+/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-}
-*/
+    
+}*/
+
 
 @end

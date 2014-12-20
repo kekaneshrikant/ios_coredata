@@ -2,9 +2,10 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tAk-ph-M0P">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Person CoreData-->
         <scene sceneID="Et4-bZ-qIN">
             <objects>
                 <tableViewController id="RGb-6a-JAN" customClass="CoreDataTableViewController" sceneMemberID="viewController">
@@ -25,11 +26,80 @@
                             <outlet property="delegate" destination="RGb-6a-JAN" id="AYN-fM-fNL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="gaq-S2-B0W"/>
+                    <navigationItem key="navigationItem" title="Person CoreData" id="gaq-S2-B0W"/>
+                    <connections>
+                        <segue destination="wuj-xu-Bsb" kind="show" identifier="add" id="r1z-My-bvY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9HK-jK-vJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="153" y="250"/>
+        </scene>
+        <!--Add Person View Controller-->
+        <scene sceneID="QZL-aV-wkX">
+            <objects>
+                <viewController id="wuj-xu-Bsb" customClass="AddPersonViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mym-V0-3Q4"/>
+                        <viewControllerLayoutGuide type="bottom" id="xO5-lj-AYH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y25-Vf-VMU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcO-pA-mdm">
+                                <rect key="frame" x="16" y="28" width="568" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="First Name">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nOP-dd-HjD">
+                                <rect key="frame" x="16" y="66" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OoD-1Q-XYS">
+                                <rect key="frame" x="16" y="104" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybm-Bx-Jmv">
+                                <rect key="frame" x="538" y="183" width="33" height="30"/>
+                                <state key="normal" title="Add ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPersonClicked:" destination="wuj-xu-Bsb" eventType="touchUpInside" id="NXm-lP-5nx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OoD-1Q-XYS" firstAttribute="top" secondItem="nOP-dd-HjD" secondAttribute="bottom" constant="8" id="2Xx-hA-e21"/>
+                            <constraint firstItem="nOP-dd-HjD" firstAttribute="leading" secondItem="Y25-Vf-VMU" secondAttribute="leadingMargin" id="2z8-Tt-hvr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ybm-Bx-Jmv" secondAttribute="trailing" constant="13" id="6Ih-nt-Jla"/>
+                            <constraint firstItem="nOP-dd-HjD" firstAttribute="top" secondItem="hcO-pA-mdm" secondAttribute="bottom" constant="8" id="7fA-oV-DCg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nOP-dd-HjD" secondAttribute="trailing" id="8DC-7d-MFW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hcO-pA-mdm" secondAttribute="trailing" id="HZ5-PF-exR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OoD-1Q-XYS" secondAttribute="trailing" id="Qfb-8W-W3s"/>
+                            <constraint firstItem="hcO-pA-mdm" firstAttribute="leading" secondItem="Y25-Vf-VMU" secondAttribute="leadingMargin" id="iDQ-gb-RT8"/>
+                            <constraint firstItem="hcO-pA-mdm" firstAttribute="top" secondItem="Mym-V0-3Q4" secondAttribute="bottom" constant="8" id="mDQ-fD-4Ke"/>
+                            <constraint firstItem="ybm-Bx-Jmv" firstAttribute="top" secondItem="OoD-1Q-XYS" secondAttribute="bottom" constant="49" id="tlY-bi-ZMB"/>
+                            <constraint firstItem="OoD-1Q-XYS" firstAttribute="leading" secondItem="Y25-Vf-VMU" secondAttribute="leadingMargin" id="u6M-pb-rJe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="age" destination="OoD-1Q-XYS" id="mze-tP-atn"/>
+                        <outlet property="firstNameTextField" destination="hcO-pA-mdm" id="fa5-oU-iPb"/>
+                        <outlet property="lastNameTextField" destination="nOP-dd-HjD" id="DFZ-Ht-GVn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i0e-5K-YgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="123" y="969"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oR8-PO-jVK">

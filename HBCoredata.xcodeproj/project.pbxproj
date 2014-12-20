@@ -16,6 +16,7 @@
 		BF4CCFD51A3D973E00CB5D7E /* HBCoredataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4CCFD41A3D973E00CB5D7E /* HBCoredataTests.m */; };
 		BF4CCFE01A3D9A7C00CB5D7E /* HBEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4CCFDF1A3D9A7C00CB5D7E /* HBEntity.m */; };
 		BF4CCFE31A3DB5DF00CB5D7E /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4CCFE21A3DB5DF00CB5D7E /* CoreDataTableViewController.m */; };
+		BF73CA6D1A4584AE0033E306 /* AddPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF73CA6C1A4584AE0033E306 /* AddPersonViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		BF4CCFDF1A3D9A7C00CB5D7E /* HBEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBEntity.m; sourceTree = "<group>"; };
 		BF4CCFE11A3DB5DF00CB5D7E /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		BF4CCFE21A3DB5DF00CB5D7E /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		BF73CA6B1A4584AE0033E306 /* AddPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPersonViewController.h; sourceTree = "<group>"; };
+		BF73CA6C1A4584AE0033E306 /* AddPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPersonViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 				BF4CCFDF1A3D9A7C00CB5D7E /* HBEntity.m */,
 				BF4CCFE11A3DB5DF00CB5D7E /* CoreDataTableViewController.h */,
 				BF4CCFE21A3DB5DF00CB5D7E /* CoreDataTableViewController.m */,
+				BF73CA6B1A4584AE0033E306 /* AddPersonViewController.h */,
+				BF73CA6C1A4584AE0033E306 /* AddPersonViewController.m */,
 			);
 			path = HBCoredata;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				BF4CCFB81A3D973E00CB5D7E /* main.m in Sources */,
 				BF4CCFBE1A3D973E00CB5D7E /* HBCoredata.xcdatamodeld in Sources */,
 				BF4CCFE31A3DB5DF00CB5D7E /* CoreDataTableViewController.m in Sources */,
+				BF73CA6D1A4584AE0033E306 /* AddPersonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +428,7 @@
 				BF4CCFDA1A3D973E00CB5D7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF4CCFDB1A3D973E00CB5D7E /* Build configuration list for PBXNativeTarget "HBCoredataTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +437,7 @@
 				BF4CCFDD1A3D973E00CB5D7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

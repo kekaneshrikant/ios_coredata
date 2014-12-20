@@ -18,8 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-   // [self createNewPersonFirstName:@"Steve" AndLastName:@"Jobs" AndAge:@24];
-   // [self createNewPersonFirstName:@"Michael" AndLastName:@"Fleming" AndAge:@28];
+    //[self createNewPersonFirstName:@"Michael" AndLastName:@"Schumacher" AndAge:@35];
+    //[self createNewPersonFirstName:@"Ricky" AndLastName:@"Ponting" AndAge:@43];
     NSFetchRequest *nsFetch=[[NSFetchRequest alloc] initWithEntityName:@"HBEntity"];
     
   //  nsFetch.predicate = [NSPredicate predicateWithFormat:@"%K like %@",@"firstName",@"Harshal1"];
